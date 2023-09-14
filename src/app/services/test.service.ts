@@ -1,16 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {HttpClient, HttpResponse, HttpParams} from '@angular/common/http'
+import { Student } from '../models/student';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TestService {
-  private url = 'https://228e-181-231-122-56.ngrok-free.app/student'
+  private url = 'https://91cc-181-231-122-56.ngrok-free.app/student'
   constructor(private http: HttpClient) { }
   getAll(): Observable<any>{
     return this.http.get(this.url + '/getAll')
   }
+  save(student: any): Observable<any>{
+    return this.http.post(this.url, student)
+  }
+  update(id: number, student: any): Observable<any>{
+    return this.http.post(this.url + '/' + id +'/update', student)
+  }
+  delete(id: number): Observable<any>{
+    return this.http.post(this.url + '/' + id +'/delete', null)
+  }
 }
+
 
 

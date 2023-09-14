@@ -2,7 +2,7 @@ export class Student {
     id: number
     dni: string
     lastName: string
-    firsName: string
+    firstName: string
     email: string
     cohort: number
     status: string

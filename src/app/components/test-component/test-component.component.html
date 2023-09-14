@@ -1,1 +1,25 @@
-<p>test-component works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>DNI</th>
+            <th>LastName</th>
+            <th>FirstName</th>
+            <th>Email</th>
+            <th>Cohort</th>
+            <th>Status</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Phone/th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngfor="let student of studentList">
+            <td>{{student.id}}</td>
+            <td>{{student.dni}}</td>
+            <td>{{student.LastName}}</td>
+            <td>{{student.FirstName}}</td>
+            <td>{{student.email}}</td>
+        </tr>
+    </tbody>
+    
+</table>
